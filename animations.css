@@ -1,0 +1,194 @@
+/**
+ * CAPTURE — animations.css
+ * Keyframes supplémentaires, entrées de page, effets hover avancés
+ * Importer APRÈS style.css dans index.html si souhaité,
+ * ou laisser style.css les gérer. Ce fichier est autonome.
+ */
+
+/* ─── PAGE LOAD SEQUENCE ─── */
+
+/* Hero text slides in from left */
+.hero__eyebrow {
+  animation: slide-in-left .7s .1s var(--ease-out) both;
+}
+.hero__title {
+  animation: slide-in-left .7s .2s var(--ease-out) both;
+}
+.hero__sub {
+  animation: slide-in-left .7s .35s var(--ease-out) both;
+}
+.hero__actions {
+  animation: slide-in-left .7s .48s var(--ease-out) both;
+}
+
+/* Product orb drops in from top */
+.product-orb {
+  animation: drop-in .9s .3s var(--ease-out) both, float 4s 1.5s ease-in-out infinite;
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes drop-in {
+  from { opacity: 0; transform: translateY(-40px) scale(.92); }
+  to   { opacity: 1; transform: translateY(0)     scale(1); }
+}
+
+/* Nav fades down */
+.nav {
+  animation: nav-drop .6s .05s var(--ease-out) both;
+}
+@keyframes nav-drop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── FEATURE CARDS ─── */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.07) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity .4s;
+}
+.feature-card { position: relative; overflow: hidden; }
+.feature-card:hover::before { opacity: 1; }
+
+/* Icon SVG glow on card hover */
+.feature-card:hover .feature-card__icon svg circle,
+.feature-card:hover .feature-card__icon svg path,
+.feature-card:hover .feature-card__icon svg rect {
+  filter: drop-shadow(0 0 6px rgba(0, 102, 255, 0.6));
+}
+
+/* ─── SPEC ITEM HOVER ─── */
+.spec-item {
+  position: relative;
+  transition: padding-left .25s var(--ease-out);
+}
+.spec-item:hover {
+  padding-left: 10px;
+}
+.spec-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 2px;
+  height: 60%;
+  background: var(--electric);
+  border-radius: 2px;
+  transition: transform .25s var(--ease-out);
+}
+.spec-item:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* ─── TARGET CARD GLOW ─── */
+.target-card--main::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--electric), transparent);
+  border-radius: 50%;
+}
+.target-card { position: relative; overflow: hidden; }
+
+/* ─── BUY SECTION AMBIENT ─── */
+.buy::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.07), transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── BUTTON SHINE EFFECT ─── */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 60%
+  );
+  transform: skewX(-20deg);
+  transition: left .5s var(--ease-out);
+}
+.btn--primary:hover::after {
+  left: 125%;
+}
+
+/* ─── ORB PULSE ON ACTIVATE ─── */
+@keyframes orb-activate {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.5); }
+  70%  { box-shadow: 0 0 0 20px rgba(0, 102, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
+}
+.orb__body.activating {
+  animation: orb-activate .6s ease-out;
+}
+
+/* ─── STATEMENT ACCENT BLINK ─── */
+.statement__text .accent {
+  animation: accent-blink 3s ease-in-out infinite;
+}
+@keyframes accent-blink {
+  0%, 80%, 100% { text-shadow: none; }
+  90%           { text-shadow: 0 0 30px rgba(0, 102, 255, 0.5); }
+}
+
+/* ─── DEMO LABEL PULSE ─── */
+.demo__label {
+  animation: label-pulse 2.5s ease-in-out infinite;
+}
+@keyframes label-pulse {
+  0%, 100% { text-shadow: none; }
+  50%       { text-shadow: 0 0 20px rgba(0, 102, 255, 0.7); }
+}
+
+/* ─── FOOTER LOGO HOVER ─── */
+.footer__logo {
+  transition: letter-spacing .3s var(--ease-out);
+}
+.footer__logo:hover {
+  letter-spacing: .04em;
+}
+
+/* ─── SCROLL PROGRESS LINE ─── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--electric);
+  width: 0%;
+  z-index: 200;
+  transition: width .1s linear;
+  box-shadow: 0 0 8px var(--electric-glow);
+}

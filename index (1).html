@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAPTURE — mute your space</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">C<span class="nav__logo-slash">\</span>PTURE</div>
+    <ul class="nav__links">
+      <li><a href="#features">Fonctionnalités</a></li>
+      <li><a href="#specs">Specs</a></li>
+      <li><a href="#targets">Pour qui</a></li>
+      <li><a href="#buy" class="nav__cta">189,99 €</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-rings">
+      <div class="ring ring--1"></div>
+      <div class="ring ring--2"></div>
+      <div class="ring ring--3"></div>
+      <div class="ring ring--4"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Technologie acoustique de pointe</p>
+        <h1 class="hero__title">
+          Le bruit<br />
+          <span class="hero__title-accent">des uns.</span><br />
+          Le silence<br />
+          <span class="hero__title-white">des autres.</span>
+        </h1>
+        <p class="hero__sub">
+          CAPTURE crée une barrière invisible autour de vous.<br />
+          Jusqu'à 25 mètres de silence choisi.
+        </p>
+        <div class="hero__actions">
+          <a href="#buy" class="btn btn--primary">Commander — 189,99 €</a>
+          <a href="#features" class="btn btn--ghost">Découvrir</a>
+        </div>
+      </div>
+
+      <div class="hero__product">
+        <div class="product-orb" id="productOrb">
+          <div class="orb__glow"></div>
+          <div class="orb__body">
+            <div class="orb__screen">
+              <div class="orb__screen-ring"></div>
+              <p class="orb__label">DISTANCE</p>
+              <p class="orb__value" id="orbValue">10m</p>
+              <div class="orb__power">⏻</div>
+            </div>
+          </div>
+          <div class="orb__strap"></div>
+        </div>
+        <div class="hero__product-tagline">mute your space</div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="statement__inner">
+      <p class="statement__text reveal">
+        Plus besoin de porter des écouteurs.<br />
+        Posez. Tournez. <span class="accent">Disparaissez.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Ce que CAPTURE fait</p>
+        <h2 class="section-title">Trois gestes.<br />Zéro bruit.</h2>
+      </div>
+
+      <div class="features__grid">
+
+        <div class="feature-card reveal" data-delay="0">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="10" stroke="var(--electric)" stroke-width="2"/>
+              <circle cx="24" cy="24" r="16" stroke="var(--electric)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+              <circle cx="24" cy="24" r="22" stroke="var(--electric)" stroke-width="1" stroke-dasharray="3 4" opacity="0.3"/>
+              <circle cx="24" cy="24" r="4" fill="var(--electric)"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Mur de Bruit Actif</h3>
+          <p class="feature-card__desc">
+            Neutralise les nuisances sonores ambiantes jusqu'à 110 dB. Travaux, transports, open-space — CAPTURE absorbe tout.
+          </p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="100">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="12" stroke="white" stroke-width="2"/>
+              <path d="M24 12 L24 8" stroke="var(--electric)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M24 40 L24 36" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+              <path d="M36 24 L40 24" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+              <path d="M12 24 L8 24" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+              <circle cx="24" cy="24" r="3" fill="var(--electric)"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Molette de Distance</h3>
+          <p class="feature-card__desc">
+            De 1 à 25 mètres, ajustez votre périmètre de silence. Mode solo, réunion ou pièce entière — vous décidez jusqu'où va le calme.
+          </p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="200">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="14" width="20" height="20" rx="10" stroke="var(--electric)" stroke-width="2"/>
+              <rect x="18" y="18" width="12" height="12" rx="6" fill="var(--electric)" opacity="0.2"/>
+              <path d="M24 20 L24 24 L27 27" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Écran OLED</h3>
+          <p class="feature-card__desc">
+            Affichage épuré : distance active, statut et autonomie. Lisible en un coup d'œil, même en plein soleil.
+          </p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="300">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8 C24 8 36 16 36 28 C36 34.6 30.6 40 24 40 C17.4 40 12 34.6 12 28 C12 16 24 8 24 8Z" stroke="var(--electric)" stroke-width="2" fill="none"/>
+              <path d="M24 20 C24 20 29 24 29 28 C29 30.8 26.8 33 24 33 C21.2 33 19 30.8 19 28 C19 24 24 20 24 20Z" fill="var(--electric)" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Ultra-portable</h3>
+          <p class="feature-card__desc">
+            85 mm, 190 g. Aluminium brossé, sangle nylon. Certifié IP54. CAPTURE part avec vous partout — bureau, train, café.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DEMO -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Démonstration interactive</p>
+        <h2 class="section-title">Choisissez votre<br /><span class="accent">rayon de silence</span></h2>
+      </div>
+      <div class="demo reveal">
+        <div class="demo__visual">
+          <div class="demo__center-dot"></div>
+          <div class="demo__ring demo__ring--1" id="demoRing1"></div>
+          <div class="demo__ring demo__ring--2" id="demoRing2"></div>
+          <div class="demo__ring demo__ring--3" id="demoRing3"></div>
+          <div class="demo__label" id="demoLabel">10 m</div>
+        </div>
+        <div class="demo__controls">
+          <p class="demo__ctrl-label">Périmètre de silence</p>
+          <input type="range" min="1" max="25" value="10" class="demo__slider" id="demoSlider" />
+          <div class="demo__range-labels">
+            <span>1 m — Solo</span>
+            <span>12 m — Réunion</span>
+            <span>25 m — Pièce entière</span>
+          </div>
+          <div class="demo__modes">
+            <button class="demo__mode-btn active" data-value="1">Solo</button>
+            <button class="demo__mode-btn" data-value="12">Réunion</button>
+            <button class="demo__mode-btn" data-value="25">Pièce</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECS -->
+  <section class="specs" id="specs">
+    <div class="container">
+      <div class="specs__inner">
+        <div class="specs__left reveal">
+          <p class="section-eyebrow">Fiche technique</p>
+          <h2 class="section-title">Construit pour<br /><span class="accent">durer.</span></h2>
+          <p class="specs__desc">
+            Du design à la résistance, chaque détail a été pensé pour s'intégrer dans votre vie sans effort.
+          </p>
+          <a href="#buy" class="btn btn--primary specs__cta">Commander maintenant</a>
+        </div>
+        <div class="specs__right reveal">
+          <div class="spec-item">
+            <span class="spec-item__key">Format</span>
+            <span class="spec-item__val">Sphérique — ø 85 mm / 190 g</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Matériaux</span>
+            <span class="spec-item__val">Aluminium brossé + verre renforcé</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Autonomie</span>
+            <span class="spec-item__val">12h continu · Recharge USB-C rapide</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Résistance</span>
+            <span class="spec-item__val">Certifié IP54</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Portée max.</span>
+            <span class="spec-item__val">25 mètres</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Réduction</span>
+            <span class="spec-item__val">Jusqu'à 110 dB</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item__key">Affichage</span>
+            <span class="spec-item__val">Écran OLED central</span>
+          </div>
+          <div class="spec-item spec-item--price">
+            <span class="spec-item__key">Prix</span>
+            <span class="spec-item__val spec-item__val--price">189,99 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGETS -->
+  <section class="targets" id="targets">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Pour qui</p>
+        <h2 class="section-title">Votre bulle.<br /><span class="accent">Vos règles.</span></h2>
+      </div>
+      <div class="targets__grid">
+        <div class="target-card reveal" data-delay="0">
+          <div class="target-card__tag">Cœur de cible</div>
+          <h3>18 – 25 ans</h3>
+          <p>Étudiants en coloc, fêtards qui respectent leurs voisins, créatifs en zone bruyante.</p>
+        </div>
+        <div class="target-card target-card--main reveal" data-delay="100">
+          <div class="target-card__tag">Cible principale</div>
+          <h3>25 – 50 ans</h3>
+          <p>Actifs en zones urbaines. Télétravailleur, voyageur, professionnel qui a besoin de se concentrer.</p>
+        </div>
+        <div class="target-card reveal" data-delay="200">
+          <div class="target-card__tag">Cible secondaire</div>
+          <h3>Pro & Business</h3>
+          <p>Start-up, clubs, bars, salles de réunion. CAPTURE gère l'espace sonore à l'échelle d'une pièce entière.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUY -->
+  <section class="buy" id="buy">
+    <div class="buy__bg-rings">
+      <div class="ring ring--buy-1"></div>
+      <div class="ring ring--buy-2"></div>
+    </div>
+    <div class="container">
+      <div class="buy__inner reveal">
+        <p class="section-eyebrow">Disponible maintenant</p>
+        <h2 class="buy__title">Reprenez le contrôle<br />de votre espace.</h2>
+        <p class="buy__price">189<span>,99 €</span></p>
+        <p class="buy__shipping">Livraison gratuite · Retours 30 jours · Garantie 2 ans</p>
+        <a href="#" class="btn btn--primary btn--large">Commander CAPTURE</a>
+        <p class="buy__tagline">mute your space</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">C<span>\</span>PTURE</div>
+      <div class="footer__links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="footer__copy">© 2026 CAPTURE. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
