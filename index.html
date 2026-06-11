@@ -10,15 +10,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- INTRO OVERLAY -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro__device" id="introDevice">
+      <div class="intro__device-body">
+        <div class="intro__device-screen">
+          <div class="intro__screen-ring"></div>
+          <p class="intro__screen-label">DISTANCE</p>
+          <p class="intro__screen-value">10m</p>
+          <div class="intro__screen-power">⏻</div>
+        </div>
+        <div class="intro__device-logo">CAPTURE</div>
+        <div class="intro__device-strap"></div>
+        <div class="intro__device-mesh"></div>
+      </div>
+    </div>
+    <div class="intro__halo intro__halo--1" id="halo1"></div>
+    <div class="intro__halo intro__halo--2" id="halo2"></div>
+    <div class="intro__halo intro__halo--3" id="halo3"></div>
+    <div class="intro__halo intro__halo--4" id="halo4"></div>
+  </div>
+
   <div id="scroll-progress"></div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="nav__logo">C<span class="nav__logo-slash">\</span>PTURE</div>
+    <div class="nav__logo">
+      <img src="logo.png" alt="CAPTURE" class="nav__logo-img" />
+    </div>
     <ul class="nav__links">
       <li><a href="#features">Fonctionnalités</a></li>
       <li><a href="#specs">Specs</a></li>
-      <li><a href="#targets">Pour qui</a></li>
+      <li><a href="#reviews">Avis</a></li>
       <li><a href="#buy" class="nav__cta">189,99 €</a></li>
     </ul>
     <button class="nav__burger" id="burger" aria-label="Menu">
@@ -55,17 +79,21 @@
       </div>
 
       <div class="hero__product">
-        <div class="product-orb" id="productOrb">
-          <div class="orb__glow"></div>
-          <div class="orb__body">
-            <div class="orb__screen">
-              <div class="orb__screen-ring"></div>
-              <p class="orb__label">DISTANCE</p>
-              <p class="orb__value" id="orbValue">10m</p>
-              <div class="orb__power">⏻</div>
+        <div class="product-device" id="productOrb">
+          <div class="device__glow"></div>
+          <div class="device__body">
+            <div class="device__mesh"></div>
+            <div class="device__screen-wrap">
+              <div class="device__screen">
+                <div class="device__screen-ring"></div>
+                <p class="device__label">DISTANCE</p>
+                <p class="device__value" id="orbValue">10m</p>
+                <div class="device__power">⏻</div>
+              </div>
             </div>
+            <div class="device__brand">CAPTURE</div>
           </div>
-          <div class="orb__strap"></div>
+          <div class="device__strap"></div>
         </div>
         <div class="hero__product-tagline">mute your space</div>
       </div>
@@ -94,9 +122,7 @@
         <p class="section-eyebrow">Ce que CAPTURE fait</p>
         <h2 class="section-title">Trois gestes.<br />Zéro bruit.</h2>
       </div>
-
       <div class="features__grid">
-
         <div class="feature-card reveal" data-delay="0">
           <div class="feature-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,11 +133,8 @@
             </svg>
           </div>
           <h3 class="feature-card__title">Mur de Bruit Actif</h3>
-          <p class="feature-card__desc">
-            Neutralise les nuisances sonores ambiantes jusqu'à 110 dB. Travaux, transports, open-space — CAPTURE absorbe tout.
-          </p>
+          <p class="feature-card__desc">Neutralise les nuisances sonores ambiantes jusqu'à 110 dB. Travaux, transports, open-space — CAPTURE absorbe tout.</p>
         </div>
-
         <div class="feature-card reveal" data-delay="100">
           <div class="feature-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,11 +147,8 @@
             </svg>
           </div>
           <h3 class="feature-card__title">Molette de Distance</h3>
-          <p class="feature-card__desc">
-            De 1 à 25 mètres, ajustez votre périmètre de silence. Mode solo, réunion ou pièce entière — vous décidez jusqu'où va le calme.
-          </p>
+          <p class="feature-card__desc">De 1 à 25 mètres, ajustez votre périmètre de silence. Mode solo, réunion ou pièce entière — vous décidez jusqu'où va le calme.</p>
         </div>
-
         <div class="feature-card reveal" data-delay="200">
           <div class="feature-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,11 +158,8 @@
             </svg>
           </div>
           <h3 class="feature-card__title">Écran OLED</h3>
-          <p class="feature-card__desc">
-            Affichage épuré : distance active, statut et autonomie. Lisible en un coup d'œil, même en plein soleil.
-          </p>
+          <p class="feature-card__desc">Affichage épuré : distance active, statut et autonomie. Lisible en un coup d'œil, même en plein soleil.</p>
         </div>
-
         <div class="feature-card reveal" data-delay="300">
           <div class="feature-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,11 +168,8 @@
             </svg>
           </div>
           <h3 class="feature-card__title">Ultra-portable</h3>
-          <p class="feature-card__desc">
-            85 mm, 190 g. Aluminium brossé, sangle nylon. Certifié IP54. CAPTURE part avec vous partout — bureau, train, café.
-          </p>
+          <p class="feature-card__desc">85 mm, 190 g. Aluminium brossé, sangle nylon. Certifié IP54. CAPTURE part avec vous partout — bureau, train, café.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -200,72 +214,65 @@
         <div class="specs__left reveal">
           <p class="section-eyebrow">Fiche technique</p>
           <h2 class="section-title">Construit pour<br /><span class="accent">durer.</span></h2>
-          <p class="specs__desc">
-            Du design à la résistance, chaque détail a été pensé pour s'intégrer dans votre vie sans effort.
-          </p>
+          <p class="specs__desc">Du design à la résistance, chaque détail a été pensé pour s'intégrer dans votre vie sans effort.</p>
           <a href="#buy" class="btn btn--primary specs__cta">Commander maintenant</a>
         </div>
         <div class="specs__right reveal">
-          <div class="spec-item">
-            <span class="spec-item__key">Format</span>
-            <span class="spec-item__val">Sphérique — ø 85 mm / 190 g</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Matériaux</span>
-            <span class="spec-item__val">Aluminium brossé + verre renforcé</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Autonomie</span>
-            <span class="spec-item__val">12h continu · Recharge USB-C rapide</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Résistance</span>
-            <span class="spec-item__val">Certifié IP54</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Portée max.</span>
-            <span class="spec-item__val">25 mètres</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Réduction</span>
-            <span class="spec-item__val">Jusqu'à 110 dB</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-item__key">Affichage</span>
-            <span class="spec-item__val">Écran OLED central</span>
-          </div>
-          <div class="spec-item spec-item--price">
-            <span class="spec-item__key">Prix</span>
-            <span class="spec-item__val spec-item__val--price">189,99 €</span>
-          </div>
+          <div class="spec-item"><span class="spec-item__key">Format</span><span class="spec-item__val">Sphérique — ø 85 mm / 190 g</span></div>
+          <div class="spec-item"><span class="spec-item__key">Matériaux</span><span class="spec-item__val">Aluminium brossé + verre renforcé</span></div>
+          <div class="spec-item"><span class="spec-item__key">Autonomie</span><span class="spec-item__val">12h continu · Recharge USB-C rapide</span></div>
+          <div class="spec-item"><span class="spec-item__key">Résistance</span><span class="spec-item__val">Certifié IP54</span></div>
+          <div class="spec-item"><span class="spec-item__key">Portée max.</span><span class="spec-item__val">25 mètres</span></div>
+          <div class="spec-item"><span class="spec-item__key">Réduction</span><span class="spec-item__val">Jusqu'à 110 dB</span></div>
+          <div class="spec-item"><span class="spec-item__key">Affichage</span><span class="spec-item__val">Écran OLED central</span></div>
+          <div class="spec-item spec-item--price"><span class="spec-item__key">Prix</span><span class="spec-item__val spec-item__val--price">189,99 €</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TARGETS -->
-  <section class="targets" id="targets">
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-eyebrow">Pour qui</p>
-        <h2 class="section-title">Votre bulle.<br /><span class="accent">Vos règles.</span></h2>
+        <p class="section-eyebrow">Ils ont essayé</p>
+        <h2 class="section-title">L'expérience du silence<br /><span class="accent">par nos clients.</span></h2>
       </div>
-      <div class="targets__grid">
-        <div class="target-card reveal" data-delay="0">
-          <div class="target-card__tag">Cœur de cible</div>
-          <h3>18 – 25 ans</h3>
-          <p>Étudiants en coloc, fêtards qui respectent leurs voisins, créatifs en zone bruyante.</p>
+      <div class="reviews__grid">
+
+        <div class="review-card reveal" data-delay="0">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            "Testé pendant le repas de famille dominical. Mon oncle a commencé à parler politique, j'ai discrètement tourné la molette sur 'Périmètre 3 mètres' autour de mon assiette. Le silence absolu. J'ai vu ses lèvres bouger mais j'ai pu manger mes lasagnes dans une paix royale. Meilleur investissement de ma vie."
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">M</div>
+            <span>Marc Lefebvre</span>
+          </div>
         </div>
-        <div class="target-card target-card--main reveal" data-delay="100">
-          <div class="target-card__tag">Cible principale</div>
-          <h3>25 – 50 ans</h3>
-          <p>Actifs en zones urbaines. Télétravailleur, voyageur, professionnel qui a besoin de se concentrer.</p>
+
+        <div class="review-card review-card--featured reveal" data-delay="100">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            "Pour la personne qui écoute des TikTok à fond sans écouteurs sur la ligne 13 tous les matins : sache que grâce à CAPTURE, ton existence a été totalement effacée de mon trajet. Un pur bonheur."
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">S</div>
+            <span>Sophie Chen</span>
+          </div>
         </div>
-        <div class="target-card reveal" data-delay="200">
-          <div class="target-card__tag">Cible secondaire</div>
-          <h3>Pro & Business</h3>
-          <p>Start-up, clubs, bars, salles de réunion. CAPTURE gère l'espace sonore à l'échelle d'une pièce entière.</p>
+
+        <div class="review-card reveal" data-delay="200">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            "MA VOISINE BAISE EN CRIANT TROP FORT !! Franchement, c'était Koh-Lanta dans mon immeuble tous les mardis et jeudis soirs. Avec CAPTURE réglé sur un périmètre de 5 mètres, je peux enfin me reposer tranquillement et dormir comme un bébé. Ce boîtier mérite un prix Nobel, ou au moins une médaille de la paix."
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">J</div>
+            <span>Julien Dumas</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -291,7 +298,9 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__logo">C<span>\</span>PTURE</div>
+      <div class="footer__logo-wrap">
+        <img src="logo.png" alt="CAPTURE" class="footer__logo-img" />
+      </div>
       <div class="footer__links">
         <a href="#">Mentions légales</a>
         <a href="#">Politique de confidentialité</a>
